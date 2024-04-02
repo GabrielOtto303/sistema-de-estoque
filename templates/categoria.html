@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>categoria</title>
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container">
+    {{msg}}
+    <form action="cadasto" method="post">
+        <input type="text" name="categoria" required>
+        <input type="submit" value="salvar" class="btn btn-success">
+    </form>
+
+    <div>
+        <h4>categoria</h4>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>id da categoria</th>
+                    <th>nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categoria in lista %}
+                <tr>
+                    <td>{{categoria.get_id()}}</td>
+                    <td>{{categoria.get_nome()}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

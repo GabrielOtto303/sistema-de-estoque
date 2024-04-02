@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<title>estoque</title>
+
+{% extends 'index.html' %}
+{% block content %}
+
+    <div class="add">
+        <a id="add" href="/cadastro">adicionar +</a>
+</div>
+<br> 
+    <h6>{{msg}}</h6>
+    <h4>produtos</h4>
+<div>
+    
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>código</th>
+                <th>nome</th>
+                <th>quantidade</th>
+                <th>valor</th>
+                <th>descrição</th>
+                <th>chegada</th>
+                <th>validade</th>
+                <th>categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for produto in lista_produto%}
+            <tr>
+                <td>{{produto.id_produto}}</td>
+                <td>{{produto.nome_produto}}</td>
+                <td>{{produto.quantidade_produto}}</td>
+                <td>R${{produto.valor_produto|formata_valor()}}</td>
+                <td>{{produto.descricao_produto}}</td>
+                <td>{{produto.chegada_produto | formata_data()}}</td>
+                {% if produto.validade_produto != None %}
+                <td>{{produto.validade_produto|formata_data()}}</td>
+                {% else %}
+                <td><center>-</center></td>
+                {% endif %}
+                <td>{{produto.categoria_produto.get_nome()}}</td>
+                <td>
+                    <form action="produtos" method="post">
+                        <input type="text" name="id_produto" value="{{produto.id_produto}}" hidden>
+                        <input type="submit" value="excluir" class="btn btn-danger">
+                    </form>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

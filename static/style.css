@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    background-color: rgb(221, 221, 221);
+    font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji";
+    padding-left: none;
+    padding-top: 20px;
+}
+
+
+.sair{
+    margin-left: 6px;
+    display: inline-block;
+}
+ 
+.pesquisa{
+    display: inline-block;
+    padding-left: 950px
+}
+
+.apesquisa {
+    height: 30px;
+    margin-top: none;
+    width: 200px;
+    box-shadow: 1px 1px 2px rgb(130, 130, 130);
+}
+
+.buttonPesquisa{
+    background-color: aqua;
+    width: 30px;
+    height: 30px;
+    box-shadow: 1px 1px 2px rgb(130, 130, 130);
+}
+
+
+input{
+    border: none;
+    outline: none;
+}
+
+.navBar {
+    background-color: rgb(10, 1, 184);
+    width: auto;
+    margin: none;
+    margin-top: 20px;
+}
+
+
+#menu{
+    list-style: none;
+}
+
+#menu ul li{
+    display: inline;
+}
+
+#menu ul li a{
+    text-decoration: none;
+    color:  rgb(255, 255, 255);
+    display: inline-block;
+    background-color: rgb(10, 1, 184);
+    padding: 20px;
+    transition: background .6s;
+    border: none;
+}
+
+#menu ul li a:hover{
+    background-color: rgb(0, 145, 242)
+}
+
+.add {
+    padding-left: 0;
+    padding-left: 1%;
+}
+
+.adda button{
+    border: none;
+}
+#add {
+    text-decoration: none;
+    color:  rgb(255, 255, 255);
+    display: inline-block;
+    background-color: rgb(10, 1, 184);
+    padding: 10px;
+    transition: background .6s;
+    border: none;
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji";
+}
+
+#add:hover{
+    background-color: rgb(0, 145, 242)
+}
+
+.fundo{
+    background-color: rgb(130, 222, 255);
+    height: 450px;
+    width: 340px;
+    padding-top: 30px;
+    padding-left: 10px;
+    margin: auto;
+    margin-top: 30px;
+    box-shadow: 1px 1px 2px rgb(130, 130, 130);
+}
+
+.formulario input{
+    box-shadow: 1px 1px 2px rgb(130, 130, 130);
+}
+
+.formulario select{
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 2px rgb(130, 130, 130);
+}
+
+.button{
+    background-color: rgb(10, 1, 184);
+    color: white;
+    padding: 2%;
+}
+
+.login{
+
+    padding-top: 100px;
+    width: 340px;
+    margin: auto;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+.cadastroCadastroUsuario{
+    display: inline-block;
+    padding-top: none;
+
+}
+
+.usuariosTable{
+    width: 100px;
+    display: inline-block;
+    
+}
+
+.fundoVendas{
+    background-color: rgb(130, 222, 255);
+
+    width: 480px;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin: auto;
+    box-shadow: 1px 1px 2px rgb(130, 130, 130);
+}
+
+.fundo2 input ::disabled{
+    background-color:  white;
+}
+
+.altura{
+    height: 570px;
+}
+
+.pesquisaPorPeriodo {
+    display: inline-block;
+}
+.dataInicial{
+    display: inline-block;
+}
+.dataFinal{
+    display: inline-block;
+}
+
+.valorPorPeriodo {
+    display: inline-block;
+    padding-left: 10px;
+}

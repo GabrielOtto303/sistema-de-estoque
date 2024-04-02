@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+{% extends 'index.html' %}
+{% block content %}
+    <div class="fundo">
+        <div class="container">
+            <form action="cadastro_produto" class="formulario" method="post">
+                <h6>{{msg}}</h6>
+                <label>Categoria</label>
+                <select name="categoria_produto">
+                    <option value="">selecione uma categoria</option>
+                    {% for categoria in lista_categoria %}
+                    <option value="{{categoria.get_id()}}">{{categoria.get_nome()}}</option>
+                    {%endfor%}
+                </select>
+                <br>
+                <br>
+                <label>Nome</label>
+                <input type="text" placeholder="nome" name="nome_produto" required>
+                <br>
+                <br>
+                <label>Quantidade</label>
+                <input type="number" placeholder="quantidade" name="quantidade_produto" required>
+                <br>
+                <br>
+                <label > Valor</label>
+                <input type="text" placeholder="valor" name="valor_produto" required>
+                <br>
+                <br>
+                <label>Descrição</label>
+                <input type="text" placeholder="descrição" name="descricao_produto">
+                <br>
+                <br>
+                <label>Data de chegada</label>
+                <input type="date" required name="chegada_produto">
+                <br>
+                <br>
+                <label>Data de validade</label>
+                <input type="date" name="validade_produto">
+                <br>
+                <br>
+                <input type="submit" value="cadastrar item" class="button">
+                <input type="reset" value="apagar tudo" class="button">
+            </form>
+        </div>
+    </div>
+{%endblock%}

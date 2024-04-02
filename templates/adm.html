@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+{{msg}}
+
+<div class="container">
+  <div class="cadastroCadastroUsuario">
+    <form action="/cadastrar_usuario" method="post">
+      <label>usuário</label>
+      <input type="text" name="user" required>
+      <br><br>
+      <label>senha</label>
+      <input type="password" name="senha" required>
+      <br><br>
+      <label>grupo</label>
+      <select name="grupo" style="border: none;">
+        <option value="0">operador</option>
+        <option value="1">administrador</option>
+      </select>
+      <br><br><br><br><br><br>
+      <input type="submit" class="btn btn-success" value="salvar usuário">
+    </form>
+  </div>
+
+  <div class="usuariosTable">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>usuário</th>
+          <th>grupo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in lista_usuarios %}
+        <tr>
+          <td>{{user.usuario}}</td>
+          {%if user.grupo == 1%}
+          <td>administrador</td>
+          {%elif user.grupo == 0%}
+          <td>operador</td>
+          {%endif%}
+          <td>
+            <form action="/excluir_usuario" method="post">
+              <input type="text" value="{{user.usuario}}" name="nome_usuario" hidden>
+              <input type="submit" value="excluir" class="btn btn-danger">
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{%endblock%}
